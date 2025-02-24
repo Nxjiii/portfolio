@@ -12,7 +12,7 @@ function  Home () {
      <header>
   <h1>Portfolio of Najib Sheikh-Mohamed</h1>
   <p>BsC Computer Science Student | University of Westminster | 2022-2025</p>
-  <a href="https://drive.google.com/file/d/1SsgwKN_MJGWTNZWhs90PzuD1c5Xurpuw/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="cv-button">
+  <a href="https://drive.google.com/file/d/1h_hz-HrRONSaPc1Qnn_VjXeHmLggyD6Z/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="cv-button">
     View CV
   </a>
 </header>

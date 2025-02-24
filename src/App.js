@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, NavLink, Navigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa"; // Dropdown menu icon
 import Home from "./Home";
 import About from "./About";
@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className={`container ${darkMode ? "dark-mode" : ""}`}>
       <nav className="navbar">
   <div className="nav-left">
@@ -61,12 +61,15 @@ function App() {
 </nav>
 
 
+
+
         {/* Page Routes */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+<Routes>
+  <Route path="/" element={<Navigate to="/home" />} /> 
+  <Route path="/home" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/contact" element={<Contact />} />
+</Routes>
       </div>
     </Router>
   );
