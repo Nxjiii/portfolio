@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import "./App.css"; // Ensure you have a CSS file for styling
+import "./App.css"; 
 
 
 function About() {
