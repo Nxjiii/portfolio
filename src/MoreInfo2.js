@@ -19,11 +19,11 @@ function MoreInfo2() {
           </p>
 
           <p>
-            The platform allows users to create and share travel stories through
-            multimedia blog posts, while engaging with others via comments and
-            likes. It supports dynamic content rendering, user profile
-            management, and keyword-based post discovery — all with a modular
-            and scalable architecture following MVC principles.
+            The platform allows users to create and share their travel stories
+            through multimedia blog posts, while engaging with others via
+            comments and likes. It supports dynamic content rendering, user
+            profile management, and keyword-based post discovery — all with a
+            modular and scalable architecture following MVC principles.
           </p>
 
           <h3>Coursework 1 – Backend Microservice</h3>
