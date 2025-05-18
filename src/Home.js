@@ -50,7 +50,7 @@ function Home() {
                 title: "TravelTales",
                 description:
                   "Web application for sharing travel experiences, built for my Advanced server-side programming module.",
-                github: "https://github.com/yourusername/project2",
+                github: "https://github.com/Nxjiii/TravelTales",
                 modalId: "travelTales",
               },
             ].map((project, index) => (
