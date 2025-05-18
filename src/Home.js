@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
-import moreInfo1 from "./MoreInfo1";
+import MoreInfo1 from "./MoreInfo1";
+import MoreInfo2 from "./MoreInfo2";
 
 function Home() {
+  const [activeModal, setActiveModal] = useState(null);
+
+  const openModal = (modalId) => {
+    setActiveModal(modalId);
+  };
+
+  const closeModal = () => {
+    setActiveModal(null);
+  };
+
   return (
     <div className="container">
       <div className="header-container">
@@ -33,14 +44,14 @@ function Home() {
                 description:
                   "iOS application desgined and developed as part of my final year dissertation project.",
                 github: "https://github.com/Nxjiii/PureEats",
-                moreInfo: "MoreInfo1",
+                modalId: "pureEats",
               },
               {
                 title: "TravelTales",
                 description:
                   "Web application for sharing travel experiences, built for my Advanced server-side programming module.",
                 github: "https://github.com/yourusername/project2",
-                moreInfo: "MoreInfo2",
+                modalId: "travelTales",
               },
             ].map((project, index) => (
               <div className="project-card" key={index}>
@@ -54,7 +65,14 @@ function Home() {
                   >
                     View on GitHub
                   </a>
-                  <a href={project.moreInfo} className="more-info">
+                  <a
+                    href="#"
+                    className="more-info"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      openModal(project.modalId);
+                    }}
+                  >
                     More Info
                   </a>
                 </div>
@@ -103,6 +121,28 @@ function Home() {
           </div>
         </div>
       </footer>
+
+      {activeModal === "pureEats" && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button className="close-modal" onClick={closeModal}>
+              ×
+            </button>
+            <MoreInfo1 />
+          </div>
+        </div>
+      )}
+
+      {activeModal === "travelTales" && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button className="close-modal" onClick={closeModal}>
+              ×
+            </button>
+            <MoreInfo2 />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -6,8 +6,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./Home";
-import MoreInfo1 from "./MoreInfo1";
-import Moreinfo2 from "./MoreInfo2";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,8 +29,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/MoreInfo1" element={<MoreInfo1 />} />
-          <Route path="/MoreInfo2" element={<Moreinfo2 />} />
         </Routes>
       </div>
     </Router>
