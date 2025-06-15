@@ -61,7 +61,7 @@ function MoreInfo3() {
               Workout planning with core logic and intelligent conflict
               prevention
             </li>
-            <li>Training goal selection to personalize plan generation</li>
+            <li>Training goal selection to personalize workout plan generation</li>
             <li>Save, edit, and reuse custom workout splits</li>
             <li>Basic progress tracking and workout history</li>
             <li>
