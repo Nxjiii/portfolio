@@ -1,5 +1,3 @@
-import React from "react";
-
 function MoreInfo2() {
   return (
     <div className="container">
@@ -8,7 +6,9 @@ function MoreInfo2() {
           <h2>
             TravelTales – Social Travel Blog Platform (Coursework Project)
           </h2>
-
+          <p>
+            <i>Development: March 2025 - May 2025</i>
+          </p>
           <p>
             <strong>TravelTales</strong> is a full-stack social blogging
             platform built as part of my Advanced Server-Side Web Programming

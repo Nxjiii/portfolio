@@ -7,6 +7,11 @@ function MoreInfo1() {
         <section className="about">
           <h2>Pure Eats – Final Year Dissertation Project</h2>
 
+          <br />
+          <p>
+            <i>Development: Nov 2024 - May 2025</i>
+          </p>
+          <br />
           <p>
             <strong>Pure Eats</strong> is a full-stack iOS dietary tracking app
             I developed solo as part of my Computer Science dissertation at the
@@ -32,6 +37,9 @@ function MoreInfo1() {
             features are in progress and planned for post-submission updates.
           </p>
 
+
+
+              <br />
           <h3>Key Features</h3>
           <ul>
             <li>
@@ -47,6 +55,7 @@ function MoreInfo1() {
             <li>Modular microservices architecture</li>
           </ul>
 
+          <br />
           <h3>Tech Stack</h3>
           <ul>
             <li>
@@ -77,12 +86,12 @@ function MoreInfo1() {
             </li>
           </ul>
 
+          <br />
           <h3>Project Status</h3>
           <p>
-            Submitted in May 2025 and currently awaiting academic grading. The
-            app is not yet published to the App Store, but active development
-            continues to complete the social features and prepare for potential
-            public deployment.
+           Total development time was approximately 6 months, with the
+           project submitted in May 2025. The final year dissertation was graded
+           at 70%
           </p>
         </section>
 

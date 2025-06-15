@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./App.css";
 import MoreInfo1 from "./MoreInfo1";
 import MoreInfo2 from "./MoreInfo2";
-
+import MoreInfo3 from "./MoreInfo3";
 function Home() {
   const [activeModal, setActiveModal] = useState(null);
 
@@ -21,11 +21,12 @@ function Home() {
         <header>
           <h1>Portfolio of Najib Sheikh-Mohamed</h1>
           <p>
-            BsC Computer Science Student | University of Westminster | 2022-2025
+            BSc Computer Science Graduate | University of Westminster |
+            2022-2025
           </p>
           <div className="button-group">
             <a
-              href="https://drive.google.com/file/d/1xtJICOfXuhDepuNOcEeEnoovV5R_ml31/view?usp=sharing"
+              href="https://drive.google.com/file/d/1W28Q26xWOCco402tytIr1VXONQZcoUMb/view?usp=sharing"
               className="cv-button"
             >
               View CV
@@ -45,6 +46,12 @@ function Home() {
                   "iOS application desgined and developed as part of my final year dissertation project.",
                 github: "https://github.com/Nxjiii/PureEats",
                 modalId: "pureEats",
+              },
+              {
+                title: "SmartLift",
+                description: "SaaS Cross-Platform Workout Planner.",
+                github: "https://github.com/Nxjiii/Pure",
+                modalId: "SmartLift",
               },
               {
                 title: "TravelTales",
@@ -84,7 +91,9 @@ function Home() {
 
       <footer className="footer">
         <div className="footer-content">
+          <div className="footer-contact">
           <h2>Contact</h2>
+          </div>
           <div className="contact-links">
             <a href="mailto:Najibasm178@gmail.com" className="contact-item">
               <img
@@ -140,6 +149,17 @@ function Home() {
               ×
             </button>
             <MoreInfo2 />
+          </div>
+        </div>
+      )}
+
+      {activeModal === "SmartLift" && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button className="close-modal" onClick={closeModal}>
+              ×
+            </button>
+            <MoreInfo3 />
           </div>
         </div>
       )}
