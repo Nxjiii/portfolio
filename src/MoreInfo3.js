@@ -7,7 +7,7 @@ function MoreInfo3() {
  
          <p> <i> Development June 2025 - October 2025 MVP/Beta Release (Expected)</i> </p>
          <br />
-         <p>You can follow development as I post on LinkedIn </p>
+         <p> I'll be posting development on LinkedIn, using #BuildingInPublic. 😁 </p>
          <br/>
           <p>
             <strong>SmartLift</strong> is a cross-platform mobile app designed

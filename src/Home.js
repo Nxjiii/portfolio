@@ -48,17 +48,17 @@ function Home() {
                 modalId: "pureEats",
               },
               {
-                title: "SmartLift",
-                description: "SaaS Cross-Platform Workout Planner.",
-                github: "https://github.com/Nxjiii/Pure",
-                modalId: "SmartLift",
-              },
-              {
                 title: "TravelTales",
                 description:
                   "Web application for sharing travel experiences, built for my Advanced server-side programming module.",
                 github: "https://github.com/Nxjiii/TravelTales",
                 modalId: "travelTales",
+              },
+              {
+                title: "SmartLift",
+                description: "SaaS Cross-Platform Workout Planner.",
+                github: "https://github.com/Nxjiii/Pure",
+                modalId: "SmartLift",
               },
             ].map((project, index) => (
               <div className="project-card" key={index}>
@@ -92,7 +92,7 @@ function Home() {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-contact">
-          <h2>Contact</h2>
+            <h2>Contact</h2>
           </div>
           <div className="contact-links">
             <a href="mailto:Najibasm178@gmail.com" className="contact-item">

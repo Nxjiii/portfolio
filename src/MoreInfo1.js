@@ -37,9 +37,7 @@ function MoreInfo1() {
             features are in progress and planned for post-submission updates.
           </p>
 
-
-
-              <br />
+          <br />
           <h3>Key Features</h3>
           <ul>
             <li>
@@ -89,51 +87,29 @@ function MoreInfo1() {
           <br />
           <h3>Project Status</h3>
           <p>
-           Total development time was approximately 6 months, with the
-           project submitted in May 2025. The final year dissertation was graded
-           at 70%
+            Total development time was approximately 6 months, with the project
+            submitted in May 2025. The final year dissertation was graded at 70%
           </p>
-        </section>
 
-        <footer className="footer">
-          <div className="footer-content">
-            <h2>Contact</h2>
-            <div className="contact-links">
-              <a href="mailto:Najibasm178@gmail.com" className="contact-item">
-                <img
-                  src="https://img.icons8.com/ios-filled/24/007bff/email.png"
-                  alt="Email Icon"
-                />
-                Email
-              </a>
-
-              <a
-                href="https://github.com/Nxjiii"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-item"
-              >
-                <img
-                  src="https://img.icons8.com/ios-filled/24/007bff/github.png"
-                  alt="GitHub Icon"
-                />
-                <span>GitHub</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/najib-sheikh-mohamed"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-item"
-              >
-                <img
-                  src="https://img.icons8.com/ios-filled/24/007bff/linkedin.png"
-                  alt="LinkedIn Icon"
-                />
-                <span>LinkedIn</span>
-              </a>
-            </div>
+          <div className="button-group" style={{ marginTop: "2rem" }}>
+            <a
+              href="https://drive.google.com/file/d/1mrc5ZSpeDaUNG1rlO3oNZ0PLCIaTQORy/view?usp=sharing"
+              className="cv-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Report
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1bmg_XYnoZbmYaN8TfJC8ortwUOHTwrZ1/view?usp=sharing"
+              className="cv-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Test Cases
+            </a>
           </div>
-        </footer>
+        </section>
       </div>
     </div>
   );
