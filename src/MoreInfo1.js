@@ -54,7 +54,7 @@ function MoreInfo1() {
           </ul>
 
           <br />
-          <h3>Tech Stack</h3>
+          <h3>Tech Stack:</h3>
           <ul>
             <li>
               <strong>Frontend:</strong> React Native, JavaScript, Xcode (iOS
