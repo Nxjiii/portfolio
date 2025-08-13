@@ -56,7 +56,7 @@ function MoreInfo3() {
               <strong>APIs:</strong> Custom RESTful APIs
             </li>
             <li>
-              <strong>Dev Tools:</strong> Git, Agile methodology
+              <strong>Dev Tools:</strong> Git, Agile methodology, Render
             </li>
           </ul>
           <br />
