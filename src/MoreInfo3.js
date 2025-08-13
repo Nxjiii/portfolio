@@ -1,91 +1,100 @@
+import React from "react";
+
 function MoreInfo3() {
   return (
     <div className="container">
       <div className="main-content">
         <section className="about">
-          <h2>SmartLift</h2>
- 
-         <p> <i> Development June 2025 - October 2025 MVP/Beta Release (Expected)</i> </p>
-         <br />
-         <p> I'll be posting development on LinkedIn, using #BuildingInPublic. 😁 </p>
-         <br/>
-          <p>
-            <strong>SmartLift</strong> is a cross-platform mobile app designed
-            to streamline and enhance the workout planning experience. It offers
-            a robust set of features for tracking workouts, building custom
-            routines, and managing fitness progress over time. SmartLift
-            intelligently prevents scheduling conflicts—such as training the
-            same muscle group on back-to-back days—helping users build
-            sustainable routines that support optimal recovery.
-            <br />
-            <br />
-            <strong>SmartLift+</strong> unlocks premium features including
-            recovery-aware scheduling, advanced workout templates, progress
-            analytics, and a built-in fitness chatbot powered by AI. These tools
-            are designed to personalize each user’s fitness journey and help
-            them stay consistent, informed, and motivated.
-          </p>
-
+          <h2>QuranMind – Smart Quran Learning Platform</h2>
           <br />
-
-          <h3>Tech Stack</h3>
           <p>
-            SmartLift tech stack is as follows:
-            <ul>
-              <li>
-                <strong>Frontend:</strong> React Native (via Expo), JavaScript,
-                Zustand (state management), AsyncStorage (local caching)
-              </li>
-              <li>
-                <strong>Backend:</strong> FastAPI (Python), Pydantic for data
-                validation, optional SQLAlchemy for ORM, Docker for
-                containerized deployment
-              </li>
-              <li>
-                <strong>Database & Auth:</strong> Supabase (PostgreSQL,
-                email/password & OAuth authentication, JWT-based sessions)
-              </li>
-              <li>
-                <strong>Chatbot Integration:</strong> OpenAI API (GPT-3.5) via a
-                custom API layer for fitness-specific prompts and usage tracking
-              </li>
-            </ul>
+            <i>
+              QuranMind is a modern platform and app designed to make Quran
+              learning easier, structured, and trackable for students, teachers,
+              madrasahs, and families.
+            </i>
           </p>
-
           <br />
-
+          <p>
+            Think of it as Seneca for the Quran — QuranMind brings smart
+            learning tools, homework tracking, progress monitoring, and light
+            gamification to the world of Quran education. The platform is built
+            to keep individuals engaged and make learning structured, using
+            scientifically backed memory recollection and learning techniques.
+          </p>
+          <p>
+            Students can follow a personalised learning journey, complete
+            assignments, and track their progress. Teachers and madrasahs can
+            assign homework, monitor student performance, and communicate
+            easily. Families can support and monitor their children’s Quran
+            learning in a transparent, collaborative way.
+          </p>
+          <br />
           <h3>Key Features</h3>
           <ul>
-       
+            <li>Personalised learning journeys for each student</li>
+            <li>Homework assignment and tracking for teachers and madrasahs</li>
+            <li>Progress monitoring and analytics dashboards</li>
+            <li>Smart revision tools based on proven memory techniques</li>
+            <li>Light gamification to boost engagement</li>
+            <li>Family and teacher collaboration features</li>
+            <li>Secure cloud-based data storage</li>
+          </ul>
+          <br />
+          <h3>Tech Stack</h3>
+          <ul>
             <li>
-              Workout planning with core logic and intelligent conflict
-              prevention
-            </li>
-            <li>Training goal selection to personalize workout plan generation</li>
-            <li>Save, edit, and reuse custom workout splits</li>
-            <li>Basic progress tracking and workout history</li>
-            <li>
-              User authentication via email/password and social logins (OAuth)
-            </li>
-            <li>Local caching for offline access and session persistence</li>
-            <li>
-              <strong>Premium-only:</strong> Recovery-aware scheduling
-            </li>
-            <li>
-              <strong>Premium-only:</strong> AI-powered fitness chatbot
+              <strong>Frontend:</strong> React, React Native
             </li>
             <li>
-              <strong>Premium-only:</strong> Curated workout templates and
-              advanced analytics
+              <strong>Backend:</strong> Node.js, Express, FastAPI
             </li>
             <li>
-              <strong>Premium-only:</strong> Subscription management for
-              SmartLift+
+              <strong>Database & Auth:</strong> Supabase (PostgreSQL)
+            </li>
+            <li>
+              <strong>APIs:</strong> Custom RESTful APIs
+            </li>
+            <li>
+              <strong>Dev Tools:</strong> Git, Agile methodology
             </li>
           </ul>
+          <br />
+          <h3>Project Status</h3>
+          <p>
+            QuranMind is actively being developed and is set to be piloted in UK
+            madrasahs. For more details, visit{" "}
+            <a
+              href="https://www.quranmind.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.quranmind.co.uk
+            </a>
+            .
+          </p>
+          <div className="button-group" style={{ marginTop: "2rem" }}>
+            <a
+              href="https://github.com/Nxjiii/QuranMind"
+              className="cv-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+            </a>
+            <a
+              href="https://www.quranmind.co.uk"
+              className="cv-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Website
+            </a>
+          </div>
         </section>
       </div>
     </div>
   );
 }
+
 export default MoreInfo3;

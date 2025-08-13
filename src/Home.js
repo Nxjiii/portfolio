@@ -43,7 +43,7 @@ function Home() {
               {
                 title: "Pure Eats",
                 description:
-                  "iOS application desgined and developed as part of my final year dissertation project.",
+                  "iOS application designed and developed as part of my final year dissertation project.",
                 github: "https://github.com/Nxjiii/PureEats",
                 modalId: "pureEats",
               },
@@ -55,10 +55,11 @@ function Home() {
                 modalId: "travelTales",
               },
               {
-                title: "SmartLift",
-                description: "SaaS Cross-Platform Workout Planner.",
-                github: "https://github.com/Nxjiii/Pure",
-                modalId: "SmartLift",
+                title: "QuranMind",
+                description:
+                  "QuranMind is a platform and app designed to make Quran learning easier, structured, and trackable for students, teachers, madrasahs, and families. Think of it as Seneca for the Quran — focused on smart learning tools, homework tracking, progress monitoring, and light gamification to keep individuals engaged and learning structured with scientifically backed memory recollection and learning techniques.",
+                github: "https://github.com/Nxjiii/QuranMind",
+                modalId: "QuranMind",
               },
             ].map((project, index) => (
               <div className="project-card" key={index}>
@@ -153,7 +154,7 @@ function Home() {
         </div>
       )}
 
-      {activeModal === "SmartLift" && (
+      {activeModal === "QuranMind" && (
         <div className="modal-overlay">
           <div className="modal-content">
             <button className="close-modal" onClick={closeModal}>
