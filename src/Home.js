@@ -26,7 +26,7 @@ function Home() {
           </p>
           <div className="button-group">
             <a
-              href="https://drive.google.com/file/d/1W28Q26xWOCco402tytIr1VXONQZcoUMb/view?usp=sharing"
+              href="https://drive.google.com/file/d/1sCfYRbsCJNlWxTvUS0YJoWLLnRF5_2RF/view?usp=drive_link"
               className="cv-button"
             >
               View CV
