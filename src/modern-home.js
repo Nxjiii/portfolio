@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./App.css";
+import "./modern-portfolio.css";
 import MoreInfo1 from "./MoreInfo1";
 import MoreInfo2 from "./MoreInfo2";
 import MoreInfo3 from "./MoreInfo3";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -6,29 +6,33 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./Home";
+import About from "./About";
+import MoreInfo1 from "./MoreInfo1";
+import MoreInfo2 from "./MoreInfo2";
+import MoreInfo3 from "./MoreInfo3";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  //  dark mode
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode", !darkMode);
-  };
+  // Dark mode is now the default, so we've removed the toggle
+  
+  // Apply dark mode class to body on component mount
+  React.useEffect(() => {
+    document.body.classList.add("dark-mode");
+    return () => {
+      document.body.classList.remove("dark-mode");
+    };
+  }, []);
 
   return (
     <Router basename="/portfolio">
-      <div className={`container ${darkMode ? "dark-mode" : ""}`}>
-        <nav className="toggle-button">
-          <button className="toggle-btn" onClick={toggleDarkMode}>
-            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-          </button>
-        </nav>
-
+      <div className="container">
         {/* Page Routes */}
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/moreinfo1" element={<MoreInfo1 />} />
+          <Route path="/moreinfo2" element={<MoreInfo2 />} />
+          <Route path="/moreinfo3" element={<MoreInfo3 />} />
         </Routes>
       </div>
     </Router>
