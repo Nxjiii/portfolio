@@ -175,7 +175,7 @@ function Home() {
           {/* View CV button moved here */}
           <div className="view-cv-container">
             <a
-              href="https://drive.google.com/file/d/1sCfYRbsCJNlWxTvUS0YJoWLLnRF5_2RF/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1bnbhvopZXYf97LYrgVUAdqRytyeKFQnx/view?usp=drive_link"
               className="cv-button"
               target="_blank"
               rel="noopener noreferrer"
