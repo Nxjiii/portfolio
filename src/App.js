@@ -13,7 +13,7 @@ import MoreInfo3 from "./MoreInfo3";
 
 function App() {
   // Dark mode is now the default, so we've removed the toggle
-  
+
   // Apply dark mode class to body on component mount
   React.useEffect(() => {
     document.body.classList.add("dark-mode");

@@ -7,8 +7,8 @@ import MoreInfo3 from "./MoreInfo3";
 
 function Home() {
   const [activeModal, setActiveModal] = useState(null);
-  const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef(null);
+  const scrollbarThumbRef = useRef(null);
 
   const projects = [
     {
@@ -17,7 +17,7 @@ function Home() {
         "iOS application designed and developed as part of my final year dissertation project.",
       github: "https://github.com/Nxjiii/PureEats",
       modalId: "pureEats",
-      tags: ["React Native", "Node.js", "Supabase", "Rasa"]
+      tags: ["React Native", "Node.js", "Supabase", "Rasa"],
     },
     {
       title: "TravelTales",
@@ -25,7 +25,7 @@ function Home() {
         "Web application for sharing travel experiences, built for my Advanced server-side programming module.",
       github: "https://github.com/Nxjiii/TravelTales",
       modalId: "travelTales",
-      tags: ["React", "Express", "MongoDB", "Node.js"]
+      tags: ["React", "Express", "MongoDB", "Node.js"],
     },
     {
       title: "QuranMind",
@@ -33,7 +33,7 @@ function Home() {
         "Platform designed to make Quran learning easier, structured, and trackable for students, teachers, madrasahs, and families.",
       github: "https://github.com/Nxjiii/QuranMind",
       modalId: "QuranMind",
-      tags: ["React", "React Native", "Node.js", "Supabase"]
+      tags: ["React", "React Native", "Node.js", "Supabase"],
     },
   ];
 
@@ -44,35 +44,115 @@ function Home() {
   const closeModal = () => {
     setActiveModal(null);
   };
-  
-  // Handle scroll indicators
+
+  // Handle scroll and update scrollbar thumb position
   useEffect(() => {
     const handleScroll = () => {
-      if (!scrollRef.current) return;
-      
-      const scrollPosition = scrollRef.current.scrollLeft;
-      const cardWidth = scrollRef.current.offsetWidth / 1.5;
-      const newIndex = Math.round(scrollPosition / cardWidth);
-      
-      setActiveIndex(Math.min(newIndex, projects.length - 1));
+      if (!scrollRef.current || !scrollbarThumbRef.current) return;
+
+      const scrollContainer = scrollRef.current;
+      const scrollThumb = scrollbarThumbRef.current;
+
+      // Get scroll dimensions
+      const scrollLeft = scrollContainer.scrollLeft;
+      const scrollWidth = scrollContainer.scrollWidth;
+      const clientWidth = scrollContainer.clientWidth;
+      const maxScroll = scrollWidth - clientWidth;
+
+      // If there's no scrollable content, hide the thumb
+      if (maxScroll <= 0) {
+        scrollThumb.style.display = "none";
+        return;
+      } else {
+        scrollThumb.style.display = "block";
+      }
+
+      // Calculate scroll percentage (0 to 1)
+      const scrollPercentage = scrollLeft / maxScroll;
+
+      // Calculate thumb width as percentage of track (represents visible area)
+      const thumbWidthPercentage = Math.max(
+        (clientWidth / scrollWidth) * 100,
+        10
+      ); // minimum 10%
+
+      // Calculate available space for thumb movement
+      const availableSpace = 100 - thumbWidthPercentage;
+
+      // Position the thumb
+      const thumbPosition = scrollPercentage * availableSpace;
+
+      // Apply styles
+      scrollThumb.style.width = `${thumbWidthPercentage}%`;
+      scrollThumb.style.left = `${thumbPosition}%`;
     };
-    
+
     const scrollContainer = scrollRef.current;
     if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleScroll);
-      return () => scrollContainer.removeEventListener('scroll', handleScroll);
+      scrollContainer.addEventListener("scroll", handleScroll);
+
+      // Also update on window resize
+      window.addEventListener("resize", handleScroll);
+
+      // Initialize scrollbar thumb
+      handleScroll();
+
+      return () => {
+        scrollContainer.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleScroll);
+      };
     }
   }, [projects.length]);
-  
+
+  // Scroll to first card on initial render
+  useEffect(() => {
+    // Wait for DOM to fully render
+    const timer = setTimeout(() => {
+      // Reset the scroll position first to ensure consistent behavior
+      if (scrollRef.current) {
+        scrollRef.current.scrollLeft = 0;
+      }
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Scroll to card on indicator click
-  const scrollToCard = (index) => {
-    if (scrollRef.current) {
-      const cardWidth = scrollRef.current.offsetWidth / 1.5;
-      scrollRef.current.scrollTo({
-        left: index * cardWidth,
-        behavior: 'smooth'
-      });
-    }
+  // Handle scrollbar track click
+  const handleScrollbarClick = (e) => {
+    if (!scrollRef.current || !scrollbarThumbRef.current) return;
+
+    const scrollContainer = scrollRef.current;
+    const scrollThumb = scrollbarThumbRef.current;
+
+    // Get click position relative to track
+    const trackRect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - trackRect.left;
+    const trackWidth = trackRect.width;
+
+    // Get thumb dimensions
+    const thumbWidth = scrollThumb.offsetWidth;
+
+    // Calculate where to position the center of the thumb
+    const targetThumbCenter = clickX;
+    const targetThumbLeft = targetThumbCenter - thumbWidth / 2;
+
+    // Convert to percentage of available movement space
+    const availableSpace = trackWidth - thumbWidth;
+    const thumbPositionPercentage = Math.max(
+      0,
+      Math.min(1, targetThumbLeft / availableSpace)
+    );
+
+    // Calculate corresponding scroll position
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    const newScrollPosition = thumbPositionPercentage * maxScroll;
+
+    // Scroll to the position
+    scrollContainer.scrollTo({
+      left: newScrollPosition,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -84,7 +164,16 @@ function Home() {
             BSc Computer Science Graduate | University of Westminster |
             2022-2025
           </p>
-          <div className="button-group">
+          {/* Removed button-group div */}
+        </header>
+      </div>
+
+      <main className="main-content">
+        <section className="projects">
+          {/* Removed "My Projects" heading */}
+
+          {/* View CV button moved here */}
+          <div className="view-cv-container">
             <a
               href="https://drive.google.com/file/d/1sCfYRbsCJNlWxTvUS0YJoWLLnRF5_2RF/view?usp=drive_link"
               className="cv-button"
@@ -94,28 +183,35 @@ function Home() {
               View CV
             </a>
           </div>
-        </header>
-      </div>
 
-      <main className="main-content">
-        <section className="projects">
-          <h2>My Projects</h2>
-          
           {/* Horizontal scrolling project cards */}
           <div className="project-scroll" ref={scrollRef}>
             {projects.map((project, index) => (
-              <div className="project-card" key={index}>
+              <motion.div
+                className="project-card"
+                key={index}
+                initial={{ scale: 0.9, opacity: 0.8 }}
+                whileInView={{ scale: 0.95, opacity: 1 }}
+                whileHover={{ scale: 1, rotate: 3 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                }}
+              >
                 <div>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  
+
                   <div className="project-tags">
                     {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="project-tag">{tag}</span>
+                      <span key={tagIndex} className="project-tag">
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="button-group">
                   <a
                     href={project.github}
@@ -132,20 +228,21 @@ function Home() {
                     Details
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-          
-          {/* Scroll indicators */}
-          <div className="scroll-indicators">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                className={`scroll-indicator ${index === activeIndex ? 'active' : ''}`}
-                onClick={() => scrollToCard(index)}
-                aria-label={`Go to project ${index + 1}`}
-              />
-            ))}
+
+          {/* Scrollbar replaces indicators */}
+          <div className="custom-scrollbar-container">
+            <div
+              className="custom-scrollbar-track"
+              onClick={handleScrollbarClick}
+            >
+              <div
+                className="custom-scrollbar-thumb"
+                ref={scrollbarThumbRef}
+              ></div>
+            </div>
           </div>
         </section>
       </main>
